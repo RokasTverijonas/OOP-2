@@ -63,23 +63,29 @@ int main(){
             {
                 while(true)
                 {
+                    
                     studentas s;
                     std::cout << "Iveskite " << A.size() + 1 << " studento varda ('pabaiga' - baigia ivedinejima): " << std::endl;
-                    std::cin >> s.vardas;
-                    if(s.vardas == "pabaiga")
+                    std::string vardas1, pavarde1;
+                    std::cin >> vardas1;
+                    s.setVardas(vardas1);
+                    if(s.getVardas() == "pabaiga")
                     {
                         break;
                     }
 
                     std::cout << "Iveskite studento pavarde: " << std::endl;
-                    std::cin >> s.pavarde;
+                    std::cin >> pavarde1;
+                    s.setPavarde(pavarde1);
+                    int egz;
+                    std::vector<int> temp_nd;
 
                     if(pasirinkimas == 1)
                     {
                         while(true)
                         {
                             int nd;
-                            std::cout << "Iveskite " << A.size() + 1 << " studento " << s.nd.size() + 1 <<  " namu darbo ivertinima ( 0 - baigti): " << std::endl;
+                            std::cout << "Iveskite " << A.size() + 1 << " studento " << s.getNd().size() + 1 <<  " namu darbo ivertinima ( 0 - baigti): " << std::endl;
                             std::cin >> nd;
                             if(nd == 0)
                             {
@@ -94,7 +100,8 @@ int main(){
                                 continue;
                             }
 
-                            s.nd.push_back(nd);
+                            temp_nd.push_back(nd);
+                            s.setNd(temp_nd);
 
                         }
                     }
@@ -107,7 +114,7 @@ int main(){
                         }
                         for(int i = 0; i < auto_kiekis; i++)
                         {
-                            s.nd.push_back(rand() % 10 + 1);
+                            temp_nd.push_back(rand() % 10 + 1);
                         }
                     }
 
@@ -116,8 +123,8 @@ int main(){
                         while(true)
                         {
                         std::cout << "Iveskite " << A.size() + 1 << " studento egzamino rezultata: " << std::endl;
-                        std::cin >> s.egzaminas;
-                        if(s.egzaminas > 0 && s.egzaminas <= 10)
+                        std::cin >> egz;
+                        if(egz > 0 && egz <= 10)
                         {
                             break;
                         }
@@ -128,11 +135,12 @@ int main(){
                     }
                     else if(pasirinkimas == 2)
                     {
-                        s.egzaminas = rand() % 10 + 1;
+                        egz = rand() % 10 + 1;
                     }
+                    s.setEgzaminas(egz);
 
-                    s.galutinisVid = galutinis(s, vidurkis(s));
-                    s.galutinisMed = galutinis(s, mediana(s));
+                    s.setGalutinisVid(galutinis(s, vidurkis(s)));
+                    s.setGalutinisMed(galutinis(s, mediana(s)));
 
                     A.push_back(s);
 
@@ -160,22 +168,25 @@ int main(){
                 for(int i = 0; i < m; i++)
                 {
                     studentas s;
-                    s.vardas = vardai[rand() % vardai.size()];
-                    s.pavarde = pavardes[rand() % pavardes.size()];
-                    s.egzaminas = rand() % 10 + 1;
+                    std::vector<int> temp_nd;
+                    s.setVardas(vardai[rand() % vardai.size()]);
+                    s.setPavarde(pavardes[rand() % pavardes.size()]);
+                    s.setEgzaminas(rand() % 10 + 1);
                     if(m > 0)
                     {
                         for(int i = 0; i < n; i++)
                         {
-                            s.nd.push_back(rand() % 10 + 1);
+                            temp_nd.push_back(rand() % 10 + 1);
                         }
                     }
+                    s.setNd(temp_nd);
 
-                    s.galutinisVid = galutinis(s, vidurkis(s));
-                    s.galutinisMed = galutinis(s, mediana(s));
+                    s.setGalutinisVid(galutinis(s, vidurkis(s)));
+                    s.setGalutinisMed(galutinis(s, mediana(s)));
                     
                     A.push_back(s);
                 }
+
                 break;
             }
             case 4:

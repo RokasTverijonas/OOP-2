@@ -7,9 +7,6 @@
 
 class studentas {
     
-    
-    
-    
     private:
     std::string vardas;
     std::string pavarde;
