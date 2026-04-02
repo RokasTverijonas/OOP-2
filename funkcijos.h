@@ -43,7 +43,10 @@ void skaitymas(konteineris& A, std::string failas)
     {
         std::stringstream ss(eilute);
         studentas s;
-        ss >> s.vardas >> s.pavarde;
+        std::string vardas, pavarde;
+        ss >> vardas >> pavarde;
+        s.setVardas(vardas);
+        s.setPavarde(pavarde);
 
         std::vector<int> pazymiai;
         int x;
@@ -52,13 +55,13 @@ void skaitymas(konteineris& A, std::string failas)
             pazymiai.push_back(x);
         }
 
-        s.egzaminas = pazymiai.back();
+        s.setEgzaminas(pazymiai.back());
         pazymiai.pop_back();
 
 
-        s.nd = pazymiai;
-        s.galutinisVid = galutinis(s, vidurkis(s));
-        s.galutinisMed = galutinis(s, mediana(s));
+        s.setNd(pazymiai);
+        s.setGalutinisVid(galutinis(s, vidurkis(s)));
+        s.setGalutinisMed(galutinis(s, mediana(s)));
 
         A.push_back(s);
     }
