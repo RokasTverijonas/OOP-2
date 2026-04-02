@@ -7,6 +7,9 @@
 
 class studentas {
     
+    
+    
+    
     private:
     std::string vardas;
     std::string pavarde;
@@ -16,6 +19,9 @@ class studentas {
     double galutinisMed;
 
     public:
+    //constructor
+    studentas() : egzaminas(0), galutinisVid(0.0), galutinisMed(0.0) {}
+    ~studentas() {}
     //getters
     const std::string& getVardas() const { return vardas; }
     const std::string& getPavarde() const { return pavarde; }
