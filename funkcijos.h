@@ -74,19 +74,19 @@ void rikiavimas(konteineris& A, int kriterijus)
     
     auto byVardas = [](const studentas& a, const studentas& b)
     {
-        return a.vardas < b.vardas;
+        return a.getVardas() < b.getVardas();
     };
     auto byPavarde = [](const studentas& a, const studentas& b)
     {
-        return a.pavarde < b.pavarde;
+        return a.getPavarde() < b.getPavarde();
     };
     auto byGalVid = [](const studentas& a, const studentas& b)
     {
-        return a.galutinisVid < b.galutinisVid;
+        return a.getGalutinisVid() < b.getGalutinisVid();
     };
     auto byGalMed = [](const studentas& a, const studentas& b)
     {
-        return a.galutinisMed < b.galutinisMed;
+        return a.getGalutinisMed() < b.getGalutinisMed();
     };
 
     //Listo rikiavimas
@@ -121,7 +121,7 @@ void StudentuPadalinimas( konteineris& A, konteineris& vargsai, konteineris& kie
 {
     for(const auto& s : A)
     {
-        if(s.galutinisVid < 5.0)
+        if(s.getGalutinisVid() < 5.0)
         {
             vargsai.push_back(s);
         }
@@ -141,13 +141,13 @@ void StudentuPadalinimas2(konteineris& A, konteineris& vargsai)
     if constexpr (std::is_same_v<konteineris, std::list<studentas>>)
     {
         A.sort([](const studentas& a, const studentas& b){
-            return a.galutinisVid > b.galutinisVid;
+            return a.getGalutinisVid() > b.getGalutinisVid();
         });
     }
     else 
     {
         std::sort(A.begin(), A.end(), [](const studentas& a, const studentas& b){
-            return a.galutinisVid > b.galutinisVid;
+            return a.getGalutinisVid() > b.getGalutinisVid();
         });
     }
     auto it = A.end();
@@ -155,7 +155,7 @@ void StudentuPadalinimas2(konteineris& A, konteineris& vargsai)
     while(it != A.begin())
     {
         --it;
-        if(it->galutinisVid < 5)
+        if(it->getGalutinisVid() < 5)
         {
             vargsai.push_back(*it);
             it = A.erase(it);
@@ -188,7 +188,7 @@ void StudentuPadalinimas3(konteineris& A, konteineris& vargsai)
 {
     //grazina iteratoriu it, kuris rodo i antro bloko pirma elementa, kuris pagal partition ir musu salyga buvo false
     //konteineris lieka isdeliotas taip: pirmi elementai tie, kurie tenkina salyga, tada po ju eina visi like
-    auto it = std::partition(A.begin(), A.end(), [](const studentas& a) { return a.galutinisVid >= 5.0; });
+    auto it = std::partition(A.begin(), A.end(), [](const studentas& a) { return a.getGalutinisVid() >= 5.0; });
 
     //sudeda elementus nuo konteinerio A iteratoriaus iki konteinerio pabaigos i vargsai konteineri
     vargsai.insert(vargsai.begin(), it, A.end());
