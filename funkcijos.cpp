@@ -44,29 +44,27 @@ void skaitymoTestai(std::vector<studentas>& A, std::string failas)
 
 double vidurkis(const studentas& A)
 {
-    if(A.nd.empty())
+    if(A.getNd().empty())
     {
         return 0.0;
     }
 
     double suma = 0;
 
-    for(int x : A.nd)
+    for(int x : A.getNd())
     {
         suma += x;
     }
-    double vidurkis = suma / A.nd.size();
-
-    return vidurkis;
+    return suma / A.getNd().size();
 }
 
 double mediana(const studentas& A)
 {
-    if(A.nd.empty())
+    if(A.getNd().empty())
     {
         return 0.0;
     }
-    std::vector<int> temp = A.nd;
+    std::vector<int> temp = A.getNd();
     std::sort(temp.begin(), temp.end());
 
     int n = temp.size(); 
@@ -84,7 +82,7 @@ double mediana(const studentas& A)
 
 double galutinis(const studentas& A, double balai)
 {
-    return 0.4 * balai + 0.6 * A.egzaminas;
+    return 0.4 * balai + 0.6 * A.getEgzaminas();
 }
 
 void spausdinimas(std::vector<studentas>& A)
@@ -116,14 +114,14 @@ void spausdinimas(std::vector<studentas>& A)
 
     for(auto& s : A)
     {
-        std::cout <<std::setw(10) <<  s.vardas << std::setw(15)<< s.pavarde;
+        std::cout <<std::setw(10) <<  s.getVardas() << std::setw(15)<< s.getPavarde();
         if(budas == 'm')
         {
-            std::cout << std::setw(20) << std::fixed << std::setprecision(2) << s.galutinisMed << std::endl;
+            std::cout << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisMed() << std::endl;
         }
         else
         {
-            std::cout << std::setw(20) << std::fixed << std::setprecision(2) << s.galutinisVid << std::endl;
+            std::cout << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisVid() << std::endl;
         }
     } 
 }
@@ -151,9 +149,9 @@ void failoSpausdinimas(std::vector<studentas>& A)
     
     for(auto& s : A)
     {
-        std::cout << std::setw(20) << s.vardas << std::setw(25) << s.pavarde;
+        std::cout << std::setw(20) << s.getVardas() << std::setw(25) << s.getPavarde();
 
-        std::cout << std::setw(20) << std::fixed << std::setprecision(2) << s.galutinisVid << std::setw(20) << std::fixed << std::setprecision(2) << s.galutinisMed << std::endl;
+        std::cout << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisVid() << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisMed() << std::endl;
         
     }
     }
@@ -168,9 +166,9 @@ void failoSpausdinimas(std::vector<studentas>& A)
     
     for(auto& s : A)
     {
-        failas << std::setw(20) << s.vardas << std::setw(25) << s.pavarde;
+        failas << std::setw(20) << s.getVardas() << std::setw(25) << s.getPavarde();
 
-        failas << std::setw(20) << std::fixed << std::setprecision(2) << s.galutinisVid << std::setw(20) << std::fixed << std::setprecision(2) << s.galutinisMed << std::endl;
+        failas << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisVid() << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisMed() << std::endl;
         
     }
     std::cout << "Rezultatai isvesti faile pavadinimu 'rezultatai.txt'" << std::endl;
@@ -222,17 +220,17 @@ void atskiriFailai(std::string failas, std::vector<studentas>& vargsai, std::vec
 
     for(auto& s : vargsai)
     {
-        vargsuf << std::setw(15) << s.vardas << std::setw(20) << s.pavarde;
+        vargsuf << std::setw(15) << s.getVardas() << std::setw(20) << s.getPavarde();
 
-        vargsuf << std::setw(20) << std::fixed << std::setprecision(2) << s.galutinisVid << std::setw(20) << std::fixed << std::setprecision(2) << s.galutinisMed << "\n";
+        vargsuf << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisVid() << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisMed() << "\n";
         
     }
 
     for(auto& s : kietekai)
     {
-        kietekuf << std::setw(15) << s.vardas << std::setw(20) << s.pavarde;
+        kietekuf << std::setw(15) << s.getVardas() << std::setw(20) << s.getPavarde();
 
-        kietekuf << std::setw(20) << std::fixed << std::setprecision(2) << s.galutinisVid << std::setw(20) << std::fixed << std::setprecision(2) << s.galutinisMed << "\n";
+        kietekuf << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisVid() << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisMed() << "\n";
         
     }
     
@@ -271,6 +269,10 @@ void tyrimasAntras(std::vector<studentas>& A, std::vector<studentas>& vargsai, s
 
     for(auto x : studKiekis)
     {
+        vargsai.clear();
+        kietekai.clear();
+        A.clear();
+        
         std::vector<studentas> stud;
         stud.reserve(x);
         //nuskaitymas
