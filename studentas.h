@@ -35,6 +35,12 @@ class studentas {
     void setGalutinisVid(double galVid) { galutinisVid = galVid; }
     void setGalutinisMed(double galMed) { galutinisMed = galMed; }
 
+    //member functions
+    double vidurkis() const;
+    double mediana() const;
+    double galutinisVid() const;
+    double galutinisMed() const;
+
 
 };
 
