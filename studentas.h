@@ -8,32 +8,32 @@
 class studentas {
     
     private:
-    std::string vardas;
-    std::string pavarde;
-    std::vector<int> nd;
-    int egzaminas;
-    double galutinisVid;
-    double galutinisMed;
+    std::string vardas1;
+    std::string pavarde1;
+    std::vector<int> nd1;
+    int egzaminas1;
+    double galutinisVid1;
+    double galutinisMed1;
 
     public:
     //constructor
-    studentas() : egzaminas(0), galutinisVid(0.0), galutinisMed(0.0) {}
+    studentas() : egzaminas1(0), galutinisVid1(0.0), galutinisMed1(0.0) {}
     ~studentas() {}
     //getters
-    const std::string& getVardas() const { return vardas; }
-    const std::string& getPavarde() const { return pavarde; }
-    const std::vector<int>& getNd() const { return nd; }
-    int getEgzaminas() const { return egzaminas; }
-    double getGalutinisVid() const { return galutinisVid; }
-    double getGalutinisMed() const { return galutinisMed; }
+    const std::string& getVardas() const { return vardas1; }
+    const std::string& getPavarde() const { return pavarde1; }
+    const std::vector<int>& getNd() const { return nd1; }
+    int getEgzaminas() const { return egzaminas1; }
+    double getGalutinisVid() const { return galutinisVid1; }
+    double getGalutinisMed() const { return galutinisMed1; }
 
     //setters
-    void setVardas(const std::string& v) { vardas = v;}
-    void setPavarde(const std::string& p) { pavarde = p; }
-    void setNd(const std::vector<int>& n) { nd = n; }
-    void setEgzaminas(int e) { egzaminas = e; }
-    void setGalutinisVid(double galVid) { galutinisVid = galVid; }
-    void setGalutinisMed(double galMed) { galutinisMed = galMed; }
+    void setVardas(const std::string& v) { vardas1 = v;}
+    void setPavarde(const std::string& p) { pavarde1 = p; }
+    void setNd(const std::vector<int>& n) { nd1 = n; }
+    void setEgzaminas(int e) { egzaminas1 = e; }
+    void setGalutinisVid(double galVid) { galutinisVid1 = galVid; }
+    void setGalutinisMed(double galMed) { galutinisMed1 = galMed; }
 
     //member functions
     double vidurkis() const;
