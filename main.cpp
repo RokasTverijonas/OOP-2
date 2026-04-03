@@ -45,7 +45,7 @@ int main(){
             }
             if(pasirinkimas < 1 || pasirinkimas > 10) 
             {
-                throw std::out_of_range("Pasirinkimas už leistino intervalo (1-7) ribų");
+                throw std::out_of_range("Pasirinkimas už leistino intervalo (1-10) ribų");
             }
         } catch(std::exception& e) {
             std::cout << "Klaida: " << e.what() << std::endl;
@@ -116,6 +116,7 @@ int main(){
                         {
                             temp_nd.push_back(rand() % 10 + 1);
                         }
+                        s.setNd(temp_nd);
                     }
 
                     if(pasirinkimas == 1)
@@ -139,8 +140,8 @@ int main(){
                     }
                     s.setEgzaminas(egz);
 
-                    s.setGalutinisVid(galutinis(s, vidurkis(s)));
-                    s.setGalutinisMed(galutinis(s, mediana(s)));
+                    s.setGalutinisVid(s.galutinisVid());
+                    s.setGalutinisMed(s.galutinisMed());
 
                     A.push_back(s);
 
@@ -181,8 +182,8 @@ int main(){
                     }
                     s.setNd(temp_nd);
 
-                    s.setGalutinisVid(galutinis(s, vidurkis(s)));
-                    s.setGalutinisMed(galutinis(s, mediana(s)));
+                    s.setGalutinisVid(s.galutinisVid());
+                    s.setGalutinisMed(s.galutinisMed());
                     
                     A.push_back(s);
                 }

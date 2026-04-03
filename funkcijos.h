@@ -15,10 +15,6 @@
 #include <iomanip>
 
 
-
-double vidurkis(const studentas& A);
-double mediana(const studentas& A);
-double galutinis(const studentas& A, double balai);
 void spausdinimas(std::vector<studentas>& A);
 void failoSpausdinimas(std::vector<studentas>& A);
 void failoGeneravimas(int studKiekis);
@@ -60,8 +56,8 @@ void skaitymas(konteineris& A, std::string failas)
 
 
         s.setNd(pazymiai);
-        s.setGalutinisVid(galutinis(s, vidurkis(s)));
-        s.setGalutinisMed(galutinis(s, mediana(s)));
+        s.setGalutinisVid(s.galutinisVid());
+        s.setGalutinisMed(s.galutinisMed());
 
         A.push_back(s);
     }
