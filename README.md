@@ -40,6 +40,7 @@ Programa skirta studentų akademinių pasiekimų informacijos apdorojimui. Varto
 # v1.1 Tyrimo rezultatai:
 
 -Tyrimas atliekamas su vector konteineriu, pannaudojant 3-ją strategiją, kuri buvo sukurta v1.0 versijoje.
+
 -Tyrimo tkslas palyginti struct ir class efektyvumą, saugant studentų duomenis.
 
 
