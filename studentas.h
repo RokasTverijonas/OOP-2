@@ -8,32 +8,43 @@
 class studentas {
     
     private:
-    std::string vardas1;
-    std::string pavarde1;
-    std::vector<int> nd1;
-    int egzaminas1;
-    double galutinisVid1;
-    double galutinisMed1;
+    std::string vardas_;
+    std::string pavarde_;
+    std::vector<int> nd_;
+    int egzaminas_;
+    double galutinisVid_;
+    double galutinisMed_;
 
     public:
     //constructor
-    studentas() : egzaminas1(0), galutinisVid1(0.0), galutinisMed1(0.0) {}
+    studentas() : egzaminas_(0), galutinisVid_(0.0), galutinisMed_(0.0) {}
+    //destructor
     ~studentas() {}
+    //copy constructor
+    studentas(const studentas &a)
+    {
+        vardas_ = a.vardas_;
+        pavarde_ = a.pavarde_;
+        nd_ = a.nd_;
+        egzaminas_ = a.egzaminas_;
+        galutinisVid_ = a.galutinisVid_;
+        galutinisMed_ = a.galutinisMed_;
+    }
     //getters
-    const std::string& getVardas() const { return vardas1; }
-    const std::string& getPavarde() const { return pavarde1; }
-    const std::vector<int>& getNd() const { return nd1; }
-    int getEgzaminas() const { return egzaminas1; }
-    double getGalutinisVid() const { return galutinisVid1; }
-    double getGalutinisMed() const { return galutinisMed1; }
+    const std::string& getVardas() const { return vardas_; }
+    const std::string& getPavarde() const { return pavarde_; }
+    const std::vector<int>& getNd() const { return nd_; }
+    int getEgzaminas() const { return egzaminas_; }
+    double getGalutinisVid() const { return galutinisVid_; }
+    double getGalutinisMed() const { return galutinisMed_; }
 
     //setters
-    void setVardas(const std::string& v) { vardas1 = v;}
-    void setPavarde(const std::string& p) { pavarde1 = p; }
-    void setNd(const std::vector<int>& n) { nd1 = n; }
-    void setEgzaminas(int e) { egzaminas1 = e; }
-    void setGalutinisVid(double galVid) { galutinisVid1 = galVid; }
-    void setGalutinisMed(double galMed) { galutinisMed1 = galMed; }
+    void setVardas(const std::string& v) { vardas_ = v;}
+    void setPavarde(const std::string& p) { pavarde_ = p; }
+    void setNd(const std::vector<int>& n) { nd_ = n; }
+    void setEgzaminas(int e) { egzaminas_ = e; }
+    void setGalutinisVid(double galVid) { galutinisVid_ = galVid; }
+    void setGalutinisMed(double galMed) { galutinisMed_ = galMed; }
 
     //member functions
     double vidurkis() const;

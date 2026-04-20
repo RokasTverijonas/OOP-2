@@ -44,27 +44,27 @@ void skaitymoTestai(std::vector<studentas>& A, std::string failas)
 
 double studentas::vidurkis() const 
 {
-    if(nd1.empty())
+    if(nd_.empty())
     {
         return 0.0;
     }
 
     double suma = 0;
 
-    for(int x : nd1)
+    for(int x : nd_)
     {
         suma += x;
     }
-    return suma / nd1.size();
+    return suma / nd_.size();
 }
 
 double studentas::mediana() const 
 {
-    if(nd1.empty())
+    if(nd_.empty())
     {
         return 0.0;
     }
-    std::vector<int> temp = nd1;
+    std::vector<int> temp = nd_;
     std::sort(temp.begin(), temp.end());
 
     int n = temp.size(); 
@@ -82,11 +82,11 @@ double studentas::mediana() const
 
 double studentas::galutinisVid() const
 {
-    return 0.4 * vidurkis() + 0.6 * egzaminas1;
+    return 0.4 * vidurkis() + 0.6 * egzaminas_;
 }
 double studentas::galutinisMed() const
 {
-    return 0.4 * mediana() + 0.6 * egzaminas1;
+    return 0.4 * mediana() + 0.6 * egzaminas_;
 }
 
 void spausdinimas(std::vector<studentas>& A)
