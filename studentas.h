@@ -58,6 +58,21 @@ class studentas {
           galutinisVid_(std::move(a.galutinisVid_)),
           galutinisMed_(std::move(a.galutinisMed_)) {}
 
+    //move Assignment operator
+    studentas& operator=(studentas&& a)
+    {
+        if(this != &a)
+        {
+            vardas_ = std::move(a.vardas_);
+            pavarde_ = std::move(a.pavarde_);
+            nd_ = std::move(a.nd_);
+            egzaminas_ = std::move(a.egzaminas_);
+            galutinisVid_ = std::move(a.galutinisVid_);
+            galutinisMed_ = std::move(a.galutinisMed_);
+        }
+
+        return *this;
+    }
     //getters
     const std::string& getVardas() const { return vardas_; }
     const std::string& getPavarde() const { return pavarde_; }
