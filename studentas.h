@@ -48,6 +48,16 @@ class studentas {
         return *this;
 
     }
+
+    //move constructor
+    studentas(studentas&& a)
+        : vardas_(std::move(a.vardas_)),
+          pavarde_(std::move(a.pavarde_)),
+          nd_(std::move(a.nd_)),
+          egzaminas_(std::move(a.egzaminas_)),
+          galutinisVid_(std::move(a.galutinisVid_)),
+          galutinisMed_(std::move(a.galutinisMed_)) {}
+
     //getters
     const std::string& getVardas() const { return vardas_; }
     const std::string& getPavarde() const { return pavarde_; }
