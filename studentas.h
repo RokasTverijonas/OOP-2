@@ -20,6 +20,8 @@ class studentas {
     studentas() : egzaminas_(0), galutinisVid_(0.0), galutinisMed_(0.0) {}
     //destructor
     ~studentas() {}
+
+
     //copy constructor
     studentas(const studentas &a)
     {
@@ -29,6 +31,22 @@ class studentas {
         egzaminas_ = a.egzaminas_;
         galutinisVid_ = a.galutinisVid_;
         galutinisMed_ = a.galutinisMed_;
+    }
+
+    //copy Assignment operator
+    studentas& operator=(const studentas &a)
+    {
+        if(this != &a)
+        {
+            this->vardas_ = a.vardas_;
+            this->pavarde_ = a.pavarde_;
+            this->nd_ = a.nd_;
+            this->egzaminas_ = a.egzaminas_;
+            this->galutinisVid_ = a.galutinisVid_;
+            this->galutinisMed_ = a.galutinisMed_;
+        }
+        return *this;
+
     }
     //getters
     const std::string& getVardas() const { return vardas_; }
