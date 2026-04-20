@@ -6,6 +6,7 @@
 #include <deque>
 #include "funkcijos.h"
 #include "studentas.h"
+#include "testai.h"
 
 
 const std::vector<std::string> vardai = {"Rokas", "Dziugas", "Kajus", "Dovydas", "Matas", "Simonas", "Mantas", "Kasparas", "Tomas", "Kristupas"};
@@ -31,10 +32,11 @@ int main(){
         std::cout << "4 - Skaityti informacija is failo; " << std::endl;
         std::cout << "5 - Generuoti studentų failą; " << std::endl;
         std::cout << "6 - Rusiuoti studentus i vargsus ir kietekus; " << std::endl;
-        std::cout << "7 - atlikti pirmą arba antrą tyrimą" << std::endl;
-        std::cout << "8 - Atlikti tyrima su skirtingais konteineriais"<< std::endl;
-        std::cout << "9 - Spausdinti" << std::endl;
-        std::cout << "10 - Baigti darbą; " << std::endl;
+        std::cout << "7 - atlikti pirmą arba antrą tyrimą;" << std::endl;
+        std::cout << "8 - Atlikti tyrima su skirtingais konteineriais;"<< std::endl;
+        std::cout << "9 - Spausdinti;" << std::endl;
+        std::cout << "10 - Atlikti testą su naujais metodais;" << std::endl;
+        std::cout << "11 - Baigti darbą; " << std::endl;
         std::cout << " Pasirinkite ";
         int pasirinkimas;
         try{
@@ -43,7 +45,7 @@ int main(){
             {
                 throw std::invalid_argument("Įvestis nėra sveikasis skaičius. ");
             }
-            if(pasirinkimas < 1 || pasirinkimas > 10) 
+            if(pasirinkimas < 1 || pasirinkimas > 11) 
             {
                 throw std::out_of_range("Pasirinkimas už leistino intervalo (1-10) ribų");
             }
@@ -383,6 +385,16 @@ int main(){
                 break;
             }
             case 10:
+            {
+                testDefaultConstructor();
+                testCopyConstructor();
+                testCopyAssignment();
+                testMoveConstructor();
+                testMoveAssignment();
+                testDestructor();
+                break;
+            }
+            case 11:
             {
                 run = false;
                 break;

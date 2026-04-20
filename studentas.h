@@ -56,7 +56,12 @@ class studentas {
           nd_(std::move(a.nd_)),
           egzaminas_(std::move(a.egzaminas_)),
           galutinisVid_(std::move(a.galutinisVid_)),
-          galutinisMed_(std::move(a.galutinisMed_)) {}
+          galutinisMed_(std::move(a.galutinisMed_)) 
+          {
+            a.egzaminas_ = 0;
+            a.galutinisVid_ = 0.0;
+            a.galutinisMed_ = 0.0;
+          }
 
     //move Assignment operator
     studentas& operator=(studentas&& a)
@@ -69,6 +74,11 @@ class studentas {
             egzaminas_ = std::move(a.egzaminas_);
             galutinisVid_ = std::move(a.galutinisVid_);
             galutinisMed_ = std::move(a.galutinisMed_);
+
+            a.egzaminas_ = 0;
+            a.galutinisVid_ = 0.0;
+            a.galutinisMed_ = 0.0;
+
         }
 
         return *this;

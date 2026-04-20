@@ -6,7 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCES 
 main.cpp
-funkcijos.cpp)
+funkcijos.cpp
+testai.cpp)
 
 file(GLOB TXT_FILES "${CMAKE_SOURCE_DIR}/*.txt")
 file(COPY ${TXT_FILES} DESTINATION ${CMAKE_BINARY_DIR})
