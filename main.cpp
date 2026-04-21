@@ -392,6 +392,7 @@ int main(){
                 testMoveConstructor();
                 testMoveAssignment();
                 testDestructor();
+                testInputOutputOperators();
                 break;
             }
             case 11:

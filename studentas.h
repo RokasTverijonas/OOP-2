@@ -3,7 +3,8 @@
 
 #include <string>
 #include <vector>
-
+#include <sstream>
+#include <iostream>
 
 class studentas {
     
@@ -82,6 +83,38 @@ class studentas {
         }
 
         return *this;
+    }
+    //isvedimo operatorius
+    friend std::ostream& operator<<(std::ostream& out, const studentas& a)
+    {
+        out << a.vardas_ << " " << a.pavarde_ << " ";
+        for(int i : a.nd_)
+        {
+            out << i << " ";
+        }
+        out << a.egzaminas_;
+        return out;
+    }
+    //ivedimo operatorius
+    friend std::istream& operator>>(std::istream& in, studentas& a)
+    {
+        std::string eilute;
+        std::getline(in, eilute);
+        std::stringstream ss(eilute);
+        ss >> a.vardas_ >> a.pavarde_;
+
+        int skaicius;
+        std::vector<int> visi;
+
+        while(ss >> skaicius)
+        {
+            visi.push_back(skaicius);
+        }
+        a.egzaminas_  = visi.back();
+        visi.pop_back();
+        a.nd_ = visi;
+
+        return in;
     }
     //getters
     const std::string& getVardas() const { return vardas_; }

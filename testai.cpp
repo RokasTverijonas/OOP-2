@@ -2,6 +2,7 @@
 #include <cassert>
 #include <iostream>
 #include <string>
+#include <sstream>
 
 void testDefaultConstructor()
 {
@@ -117,5 +118,28 @@ void testDestructor()
     }
 
     std::cout << "Destruktorius testą praėjo\n";
+
+}
+
+void testInputOutputOperators()
+{
+    studentas s;
+    std::stringstream ivestis("Vardas Pavarde 1 8 9 10\n");
+    ivestis >> s;
+    assert(s.getVardas() == "Vardas");
+    assert(s.getPavarde() == "Pavarde");
+    assert(s.getNd()[0] == 1);
+    assert(s.getNd()[1] == 8);
+    assert(s.getNd()[2] == 9);
+    assert(s.getEgzaminas() == 10);
+
+    std::stringstream isvestis;
+    isvestis << s;
+
+    assert(isvestis.str() == "Vardas Pavarde 1 8 9 10");
+    
+
+    std::cout << "Įvesties ir išvesties operatoriai testą praėjo\n";
+
 
 }

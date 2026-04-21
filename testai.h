@@ -7,5 +7,6 @@ void testCopyAssignment();
 void testMoveConstructor();
 void testMoveAssignment();
 void testDestructor();
+void testInputOutputOperators();
 
 #endif
