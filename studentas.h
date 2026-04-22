@@ -18,7 +18,15 @@ class studentas {
     public:
     //constructor
     studentas() : egzaminas1(0), galutinisVid1(0.0), galutinisMed1(0.0) {}
-    ~studentas() {}
+    ~studentas() 
+    {   
+        vardas1.clear();
+        pavarde1.clear();
+        nd1.clear();
+        egzaminas1 = 0;
+        galutinisVid1 = 0.0;
+        galutinisMed1 = 0.0;
+    }
     //getters
     const std::string& getVardas() const { return vardas1; }
     const std::string& getPavarde() const { return pavarde1; }
