@@ -147,6 +147,7 @@ void StudentuPadalinimas2(konteineris& A, konteineris& vargsai)
             return a.galutinisVid > b.galutinisVid;
         });
     }
+    /*
     auto it = A.end();
 
     while(it != A.begin())
@@ -161,7 +162,12 @@ void StudentuPadalinimas2(konteineris& A, konteineris& vargsai)
             break;
         }
     }
-    
+        */
+    while(A.back().galutinisVid < 5)
+    {
+        vargsai.push_back(A.back());
+        A.pop_back();
+    }
     /*remove_if iskelia konteinerio elementus i jo gala, ties kuriais lambda grazina true
     // it yra iteratorius kuri po remove_if rodo i pirma "netikusi" elementa, kuri reikia pasalinti
     auto it = remove_if(A.begin(), A.end(), [&vargsai](studentas& a)
