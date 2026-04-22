@@ -138,7 +138,6 @@ void testInputOutputOperators()
 
     assert(isvestis.str() == "Vardas Pavarde 1 8 9 10");
     
-
     std::cout << "Įvesties ir išvesties operatoriai testą praėjo\n";
 
 

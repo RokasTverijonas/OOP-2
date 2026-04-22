@@ -39,12 +39,12 @@ class studentas {
     {
         if(this != &a)
         {
-            this->vardas_ = a.vardas_;
-            this->pavarde_ = a.pavarde_;
-            this->nd_ = a.nd_;
-            this->egzaminas_ = a.egzaminas_;
-            this->galutinisVid_ = a.galutinisVid_;
-            this->galutinisMed_ = a.galutinisMed_;
+            vardas_ = a.vardas_;
+            pavarde_ = a.pavarde_;
+            nd_ = a.nd_;
+            egzaminas_ = a.egzaminas_;
+            galutinisVid_ = a.galutinisVid_;
+            galutinisMed_ = a.galutinisMed_;
         }
         return *this;
 
