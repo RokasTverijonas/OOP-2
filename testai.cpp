@@ -115,6 +115,9 @@ void testDestructor()
     s.setPavarde("Pavarde");
     s.setNd(temp);
     s.setEgzaminas(9);
+    //s.~studentas();
+    //std::cout << "Getinamas egzaminas po destruktoriaus" << std::endl;
+    //std::cout << s.getEgzaminas() << std::endl;
     }
 
     std::cout << "Destruktorius testą praėjo\n";

@@ -34,8 +34,8 @@ int main(){
         std::cout << "6 - Rusiuoti studentus i vargsus ir kietekus; " << std::endl;
         std::cout << "7 - atlikti pirmą arba antrą tyrimą;" << std::endl;
         std::cout << "8 - Atlikti tyrima su skirtingais konteineriais;"<< std::endl;
-        std::cout << "9 - Spausdinti;" << std::endl;
-        std::cout << "10 - Atlikti testą su naujais metodais;" << std::endl;
+        std::cout << "9 - Atlikti testą su naujais metodais;" << std::endl;
+        std::cout << "10 - Spausdinti;" << std::endl;
         std::cout << "11 - Baigti darbą; " << std::endl;
         std::cout << " Pasirinkite ";
         int pasirinkimas;
@@ -381,11 +381,6 @@ int main(){
             
             case 9:
             {
-                spausdinimas(A);
-                break;
-            }
-            case 10:
-            {
                 testDefaultConstructor();
                 testCopyConstructor();
                 testCopyAssignment();
@@ -393,6 +388,11 @@ int main(){
                 testMoveAssignment();
                 testDestructor();
                 testInputOutputOperators();
+                break;
+            }
+            case 10:
+            {
+                spausdinimas(A);
                 break;
             }
             case 11:

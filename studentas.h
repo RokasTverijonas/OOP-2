@@ -20,7 +20,15 @@ class studentas {
     //constructor
     studentas() : egzaminas_(0), galutinisVid_(0.0), galutinisMed_(0.0) {}
     //destructor
-    ~studentas() {}
+    ~studentas() 
+    {
+        vardas_.clear();
+        pavarde_.clear();
+        nd_.clear();
+        egzaminas_ = 0;
+        galutinisVid_ = 0.0;
+        galutinisMed_ = 0.0;
+    }
 
 
     //copy constructor

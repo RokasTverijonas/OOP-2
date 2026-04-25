@@ -18,7 +18,6 @@
 void spausdinimas(std::vector<studentas>& A);
 void failoSpausdinimas(std::vector<studentas>& A);
 void failoGeneravimas(int studKiekis);
-void atskiriFailai(std::string failas, std::vector<studentas>& vargsai, std::vector<studentas>& kietekai);
 void tyrimasPirmas();
 void tyrimasAntras(std::vector<studentas>& A, std::vector<studentas>& vargsai, std::vector<studentas>& kietekai, int kriterijus);
 
@@ -62,6 +61,37 @@ void skaitymas(konteineris& A, std::string failas)
         A.push_back(s);
     }
     input.close();
+}
+template<typename konteineris>
+void atskiriFailai(std::string failas, konteineris& vargsai, konteineris& kietekai)
+{
+    std::ofstream vargsuf("vargsai_" + failas);
+    std::ofstream kietekuf("kietekai_" + failas);
+
+    vargsuf << std::left << std::setw(10) << "Vardas" << std::setw(10) << "Pavarde"
+    << std::setw(20) << "Galutinis(Vid.)" << std::setw(20) << "Galutinis(Med.)" << "\n";
+
+    kietekuf << std::left << std::setw(15) << "Vardas" << std::setw(20) << "Pavarde"
+    << std::setw(20) << "Galutinis(Vid.)" << std::setw(20) << "Galutinis(Med.)" << "\n";
+
+    for(auto& s : vargsai)
+    {
+        vargsuf << std::setw(15) << s.getVardas() << std::setw(20) << s.getPavarde();
+
+        vargsuf << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisVid() << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisMed() << "\n";
+        
+    }
+
+    if(!kietekai.empty())
+    {
+        for(auto& s : kietekai)
+        {
+            kietekuf << std::setw(15) << s.getVardas() << std::setw(20) << s.getPavarde();
+
+            kietekuf << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisVid() << std::setw(20) << std::fixed << std::setprecision(2) << s.getGalutinisMed() << "\n";
+        
+        }        
+    }
 }
 
 template<typename konteineris>
@@ -146,6 +176,12 @@ void StudentuPadalinimas2(konteineris& A, konteineris& vargsai)
             return a.getGalutinisVid() > b.getGalutinisVid();
         });
     }
+    while(A.back().galutinisVid() < 5)
+    {
+        vargsai.push_back(A.back());
+        A.pop_back();
+    }
+    /*
     auto it = A.end();
 
     while(it != A.begin())
@@ -159,7 +195,9 @@ void StudentuPadalinimas2(konteineris& A, konteineris& vargsai)
         else{
             break;
         }
-    }
+    }*/
+
+
     
     /*remove_if iskelia konteinerio elementus i jo gala, ties kuriais lambda grazina true
     // it yra iteratorius kuri po remove_if rodo i pirma "netikusi" elementa, kuri reikia pasalinti
@@ -248,6 +286,10 @@ void KonteineriuTyrimas(konteineris& A, konteineris& vargsai, konteineris& kiete
         std::cout << std::left << std::setw(12) << x << std::setw(15) << diff1.count()
         << std::setw(15) << diff2.count() << std::setw(15) << diff3.count() 
         << std::setw(15) << visas << std::endl;
+
+        atskiriFailai("studentai" + std::to_string(x) + ".txt", vargsai, kietekai);
+
+        
 
 
     }
