@@ -7,6 +7,7 @@
 #include "funkcijos.h"
 #include "studentas.h"
 #include "testai.h"
+#include "zmogus.h"
 
 
 const std::vector<std::string> vardai = {"Rokas", "Dziugas", "Kajus", "Dovydas", "Matas", "Simonas", "Mantas", "Kasparas", "Tomas", "Kristupas"};
@@ -388,6 +389,7 @@ int main(){
                 testMoveAssignment();
                 testDestructor();
                 testInputOutputOperators();
+                //Zmogus z("Vardenis", "Pavardenis");
                 break;
             }
             case 10:
