@@ -51,7 +51,8 @@ Bandymas sukurti abstrakčios "Zmogus" klasės objektą
 
 `Zmogus z("Vardenis", "Pavardenis")`
 
-![alt text](image.png)
+<img width="972" height="257" alt="image" src="https://github.com/user-attachments/assets/17bec87f-9487-4af8-afca-7ebfd67c2bf8" />
+
 
 # "Rule of five"
 
