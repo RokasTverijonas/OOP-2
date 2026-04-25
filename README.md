@@ -37,7 +37,23 @@ Programa skirta studentų akademinių pasiekimų informacijos apdorojimui. Varto
 | Intel i5-8265U | 16GB | NVMe 256GB |      
 --------------------------------------
 
-# v1.2 rezultatai
+# v1.5 rezultatai
+
+Šioje versijoje išlaikyta ta pati v1.2 versijos logika, tačiau pridėta abstrakti bazinė klasė `Zmogus` ir iš jos išvesta `Studentas` klasė.
+
+|      Klasė     |  Tipas  |  Ką saugo                                      | 
+|----------------|---------|------------------------------------------------| 
+| `Zmogus`       | Abstract| vardą ir pavardę                               |   
+| `Studentas`    | Derived | pažymius, egzamino balą, galutinius įvertinimus|
+-----------------------------------------------------------------------------
+
+Bandymas sukurti abstrakčios "Zmogus" klasės objektą
+
+`Zmogus z("Vardenis", "Pavardenis")`
+
+![alt text](image.png)
+
+# "Rule of five"
 
 |   Metodas                | Sintaksė                                  |Paskirtis                                     | 
 | -------------------------|-------------------------------------------|----------------------------------------------| 
@@ -56,6 +72,6 @@ I/O operatoriai
 | `operator<<`    | Išveda objekto duomenis į srautą     |  
 ----------------------------------------------------------
 
-Nuotrauka
+Rezultatų nuotrauka
 
 <img width="387" height="126" alt="image" src="https://github.com/user-attachments/assets/8cf09e6b-64d9-49ae-a405-f6eaa1b4422f" />
