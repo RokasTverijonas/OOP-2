@@ -6,7 +6,7 @@
 
 void testDefaultConstructor()
 {
-    studentas s;
+    Studentas s;
     assert(s.getVardas().empty());
     assert(s.getPavarde().empty());
     assert(s.getNd().empty());
@@ -17,14 +17,14 @@ void testDefaultConstructor()
 
 void testCopyConstructor()
 {
-    studentas s;
+    Studentas s;
     std::vector<int> temp = {6,8,9}; 
     s.setVardas("vardas");
     s.setPavarde("Pavarde");
     s.setNd(temp);
     s.setEgzaminas(9);
 
-    studentas copy(s);
+    Studentas copy(s);
 
     assert(s.getVardas() == copy.getVardas());
     assert(s.getPavarde() == copy.getPavarde());
@@ -37,14 +37,14 @@ void testCopyConstructor()
 
 void testCopyAssignment()
 {
-    studentas s;
+    Studentas s;
     std::vector<int> temp = {6,8,9}; 
     s.setVardas("vardas");
     s.setPavarde("Pavarde");
     s.setNd(temp);
     s.setEgzaminas(9);
 
-    studentas copy;
+    Studentas copy;
     copy = s;
 
     assert(s.getVardas() == copy.getVardas());
@@ -58,14 +58,14 @@ void testCopyAssignment()
 
 void testMoveConstructor()
 {
-    studentas s;
+    Studentas s;
     std::vector<int> temp = {6,8,9}; 
     s.setVardas("vardas");
     s.setPavarde("Pavarde");
     s.setNd(temp);
     s.setEgzaminas(9);
 
-    studentas naujas(std::move(s));
+    Studentas naujas(std::move(s));
 
     assert(naujas.getVardas() == "vardas");
     assert(naujas.getPavarde() == "Pavarde");
@@ -82,14 +82,14 @@ void testMoveConstructor()
 
 void testMoveAssignment()
 {
-    studentas s;
+    Studentas s;
     std::vector<int> temp = {6,8,9}; 
     s.setVardas("vardas");
     s.setPavarde("Pavarde");
     s.setNd(temp);
     s.setEgzaminas(9);
 
-    studentas naujas;
+    Studentas naujas;
 
     naujas = std::move(s);
 
@@ -109,7 +109,7 @@ void testMoveAssignment()
 void testDestructor()
 {
     {
-    studentas s;
+    Studentas s;
     std::vector<int> temp = {6,8,9}; 
     s.setVardas("vardas");
     s.setPavarde("Pavarde");
@@ -126,7 +126,7 @@ void testDestructor()
 
 void testInputOutputOperators()
 {
-    studentas s;
+    Studentas s;
     std::stringstream ivestis("Vardas Pavarde 1 8 9 10\n");
     ivestis >> s;
     assert(s.getVardas() == "Vardas");

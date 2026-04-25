@@ -15,9 +15,9 @@ const std::vector<std::string> pavardes = {"Brazdeikis" , "Kazlauskas", "Macijau
 
 int main(){
     
-    std::vector<studentas> A;
-    std::vector<studentas> vargsai;
-    std::vector<studentas> kietekai;
+    std::vector<Studentas> A;
+    std::vector<Studentas> vargsai;
+    std::vector<Studentas> kietekai;
     srand(time(NULL));
     bool run = true;
     int auto_kiekis = -1;
@@ -66,7 +66,7 @@ int main(){
                 while(true)
                 {
                     
-                    studentas s;
+                    Studentas s;
                     std::cout << "Iveskite " << A.size() + 1 << " studento varda ('pabaiga' - baigia ivedinejima): " << std::endl;
                     std::string vardas1, pavarde1;
                     std::cin >> vardas1;
@@ -170,7 +170,7 @@ int main(){
                 std::cin >> n;
                 for(int i = 0; i < m; i++)
                 {
-                    studentas s;
+                    Studentas s;
                     std::vector<int> temp_nd;
                     s.setVardas(vardai[rand() % vardai.size()]);
                     s.setPavarde(pavardes[rand() % pavardes.size()]);
@@ -363,16 +363,16 @@ int main(){
                 }
                 else if(kontPasirinkimas == 'l')
                 {
-                    std::list<studentas> A_list;
-                    std::list<studentas> vargsai_list;
-                    std::list<studentas> kietekai_list;
+                    std::list<Studentas> A_list;
+                    std::list<Studentas> vargsai_list;
+                    std::list<Studentas> kietekai_list;
                     KonteineriuTyrimas(A_list, vargsai_list, kietekai_list, kriterijus, strategija);
                 }
                 else
                 {
-                    std::deque<studentas> A_deque;
-                    std::deque<studentas> vargsai_deque;
-                    std::deque<studentas> kietekai_deque;
+                    std::deque<Studentas> A_deque;
+                    std::deque<Studentas> vargsai_deque;
+                    std::deque<Studentas> kietekai_deque;
                     KonteineriuTyrimas(A_deque, vargsai_deque, kietekai_deque, kriterijus, strategija);
                 }
 

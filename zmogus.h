@@ -4,17 +4,17 @@
 #include <string>
 #include <iostream>
 
-class zmogus {
-private:
+class Zmogus {
+protected:
     std::string vardas_;
     std::string pavarde_;
 
 public:
-    zmogus() = default;
-    zmogus(const std::string& v, const std::string& p)
+    Zmogus() = default;
+    Zmogus(const std::string& v, const std::string& p)
         : vardas_(v), pavarde_(p) {}
     
-    virtual ~zmogus() 
+    virtual ~Zmogus() 
     {
         vardas_.clear();
         pavarde_.clear();     

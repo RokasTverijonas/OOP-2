@@ -15,11 +15,11 @@
 #include <iomanip>
 
 
-void spausdinimas(std::vector<studentas>& A);
-void failoSpausdinimas(std::vector<studentas>& A);
+void spausdinimas(std::vector<Studentas>& A);
+void failoSpausdinimas(std::vector<Studentas>& A);
 void failoGeneravimas(int studKiekis);
 void tyrimasPirmas();
-void tyrimasAntras(std::vector<studentas>& A, std::vector<studentas>& vargsai, std::vector<studentas>& kietekai, int kriterijus);
+void tyrimasAntras(std::vector<Studentas>& A, std::vector<Studentas>& vargsai, std::vector<Studentas>& kietekai, int kriterijus);
 
 template<typename konteineris> 
 void skaitymas(konteineris& A, std::string failas)
@@ -37,7 +37,7 @@ void skaitymas(konteineris& A, std::string failas)
     while(getline(input, eilute))
     {
         std::stringstream ss(eilute);
-        studentas s;
+        Studentas s;
         std::string vardas, pavarde;
         ss >> vardas >> pavarde;
         s.setVardas(vardas);
@@ -98,25 +98,25 @@ template<typename konteineris>
 void rikiavimas(konteineris& A, int kriterijus)
 {
     
-    auto byVardas = [](const studentas& a, const studentas& b)
+    auto byVardas = [](const Studentas& a, const Studentas& b)
     {
         return a.getVardas() < b.getVardas();
     };
-    auto byPavarde = [](const studentas& a, const studentas& b)
+    auto byPavarde = [](const Studentas& a, const Studentas& b)
     {
         return a.getPavarde() < b.getPavarde();
     };
-    auto byGalVid = [](const studentas& a, const studentas& b)
+    auto byGalVid = [](const Studentas& a, const Studentas& b)
     {
         return a.getGalutinisVid() < b.getGalutinisVid();
     };
-    auto byGalMed = [](const studentas& a, const studentas& b)
+    auto byGalMed = [](const Studentas& a, const Studentas& b)
     {
         return a.getGalutinisMed() < b.getGalutinisMed();
     };
 
     //Listo rikiavimas
-    if constexpr (std::is_same_v<konteineris, std::list<studentas>>)
+    if constexpr (std::is_same_v<konteineris, std::list<Studentas>>)
     {
         switch(kriterijus)
         {
@@ -164,15 +164,15 @@ template<typename konteineris>
 void StudentuPadalinimas2(konteineris& A, konteineris& vargsai)
 {
     
-    if constexpr (std::is_same_v<konteineris, std::list<studentas>>)
+    if constexpr (std::is_same_v<konteineris, std::list<Studentas>>)
     {
-        A.sort([](const studentas& a, const studentas& b){
+        A.sort([](const Studentas& a, const Studentas& b){
             return a.getGalutinisVid() > b.getGalutinisVid();
         });
     }
     else 
     {
-        std::sort(A.begin(), A.end(), [](const studentas& a, const studentas& b){
+        std::sort(A.begin(), A.end(), [](const Studentas& a, const Studentas& b){
             return a.getGalutinisVid() > b.getGalutinisVid();
         });
     }
@@ -222,7 +222,7 @@ void StudentuPadalinimas3(konteineris& A, konteineris& vargsai)
 {
     //grazina iteratoriu it, kuris rodo i antro bloko pirma elementa, kuris pagal partition ir musu salyga buvo false
     //konteineris lieka isdeliotas taip: pirmi elementai tie, kurie tenkina salyga, tada po ju eina visi like
-    auto it = std::partition(A.begin(), A.end(), [](const studentas& a) { return a.getGalutinisVid() >= 5.0; });
+    auto it = std::partition(A.begin(), A.end(), [](const Studentas& a) { return a.getGalutinisVid() >= 5.0; });
 
     //sudeda elementus nuo konteinerio A iteratoriaus iki konteinerio pabaigos i vargsai konteineri
     vargsai.insert(vargsai.begin(), it, A.end());

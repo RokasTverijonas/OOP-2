@@ -42,7 +42,7 @@ void skaitymoTestai(std::vector<studentas>& A, std::string failas)
 }
     */
 
-double studentas::vidurkis() const 
+double Studentas::vidurkis() const 
 {
     if(nd_.empty())
     {
@@ -58,7 +58,7 @@ double studentas::vidurkis() const
     return suma / nd_.size();
 }
 
-double studentas::mediana() const 
+double Studentas::mediana() const 
 {
     if(nd_.empty())
     {
@@ -80,16 +80,16 @@ double studentas::mediana() const
 
 }
 
-double studentas::galutinisVid() const
+double Studentas::galutinisVid() const
 {
     return 0.4 * vidurkis() + 0.6 * egzaminas_;
 }
-double studentas::galutinisMed() const
+double Studentas::galutinisMed() const
 {
     return 0.4 * mediana() + 0.6 * egzaminas_;
 }
 
-void spausdinimas(std::vector<studentas>& A)
+void spausdinimas(std::vector<Studentas>& A)
 {
     char budas;
     while(true)
@@ -130,7 +130,7 @@ void spausdinimas(std::vector<studentas>& A)
     } 
 }
 
-void failoSpausdinimas(std::vector<studentas>& A)
+void failoSpausdinimas(std::vector<Studentas>& A)
 {
     char isvedimas;
     while(true)
@@ -233,7 +233,7 @@ void tyrimasPirmas()
     }
 }
 
-void tyrimasAntras(std::vector<studentas>& A, std::vector<studentas>& vargsai, std::vector<studentas>& kietekai, int kriterijus)
+void tyrimasAntras(std::vector<Studentas>& A, std::vector<Studentas>& vargsai, std::vector<Studentas>& kietekai, int kriterijus)
 {
     std::vector<int> studKiekis = {1000, 10000, 100000, 1000000, 10000000};
 
@@ -248,7 +248,7 @@ void tyrimasAntras(std::vector<studentas>& A, std::vector<studentas>& vargsai, s
         kietekai.clear();
         A.clear();
         
-        std::vector<studentas> stud;
+        std::vector<Studentas> stud;
         stud.reserve(x);
         //nuskaitymas
         auto start1 = std::chrono::high_resolution_clock::now();
