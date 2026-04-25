@@ -37,7 +37,7 @@ public:
 
     //copy constructor
     Studentas(const Studentas &a)
-        : Zmogus(a.vardas_, a.pavarde_),
+        : Zmogus(a),
           nd_(a.nd_),
           egzaminas_(a.egzaminas_),
           galutinisVid_(a.galutinisVid_),
@@ -49,8 +49,7 @@ public:
     {
         if(this != &a)
         {
-            vardas_ = a.vardas_;
-            pavarde_ = a.pavarde_;
+            Zmogus::operator=(a);
             nd_ = a.nd_;
             egzaminas_ = a.egzaminas_;
             galutinisVid_ = a.galutinisVid_;
@@ -62,7 +61,7 @@ public:
 
     //move constructor
     Studentas(Studentas&& a)
-        : Zmogus(std::move(a.vardas_), std::move(a.pavarde_)),
+        : Zmogus(std::move(a)),
           nd_(std::move(a.nd_)),
           egzaminas_(std::move(a.egzaminas_)),
           galutinisVid_(std::move(a.galutinisVid_)),
@@ -78,8 +77,7 @@ public:
     {
         if(this != &a)
         {
-            vardas_ = std::move(a.vardas_);
-            pavarde_ = std::move(a.pavarde_);
+            Zmogus::operator=(std::move(a));
             nd_ = std::move(a.nd_);
             egzaminas_ = std::move(a.egzaminas_);
             galutinisVid_ = std::move(a.galutinisVid_);
