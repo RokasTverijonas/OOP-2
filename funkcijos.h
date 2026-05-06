@@ -271,10 +271,14 @@ void KonteineriuTyrimas(konteineris& A, konteineris& vargsai, konteineris& kiete
         else if(strategija == 2)
         {
             StudentuPadalinimas2(A, vargsai);
+            //kietekai = A;
+            //A.clear();
         }
         else if(strategija == 3)
         {
             StudentuPadalinimas3(A, vargsai);
+            //kietekai = A;
+            //A.clear();
         }
         auto end3 = std::chrono::high_resolution_clock::now();
 
@@ -286,6 +290,7 @@ void KonteineriuTyrimas(konteineris& A, konteineris& vargsai, konteineris& kiete
         std::cout << std::left << std::setw(12) << x << std::setw(15) << diff1.count()
         << std::setw(15) << diff2.count() << std::setw(15) << diff3.count() 
         << std::setw(15) << visas << std::endl;
+
 
         atskiriFailai("studentai" + std::to_string(x) + ".txt", vargsai, kietekai);
 
