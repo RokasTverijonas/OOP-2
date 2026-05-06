@@ -4,10 +4,12 @@ Project(OOP-1)
 
 set(CMAKE_CXX_STANDARD 17)
 
+include_directories(include/)
+
 set(SOURCES 
-main.cpp
-funkcijos.cpp
-testai.cpp)
+src/main.cpp
+src/funkcijos.cpp
+tests/testai.cpp)
 
 file(GLOB TXT_FILES "${CMAKE_SOURCE_DIR}/*.txt")
 file(COPY ${TXT_FILES} DESTINATION ${CMAKE_BINARY_DIR})
