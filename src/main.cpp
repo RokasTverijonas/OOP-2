@@ -35,9 +35,9 @@ int main(){
         std::cout << "6 - Rusiuoti studentus i vargsus ir kietekus; " << std::endl;
         std::cout << "7 - atlikti pirmą arba antrą tyrimą;" << std::endl;
         std::cout << "8 - Atlikti tyrima su skirtingais konteineriais;"<< std::endl;
-        std::cout << "9 - Atlikti testą su naujais metodais;" << std::endl;
-        std::cout << "10 - Spausdinti;" << std::endl;
-        std::cout << "11 - Baigti darbą; " << std::endl;
+        //std::cout << "9 - Atlikti testą su naujais metodais;" << std::endl;
+        std::cout << "9 - Spausdinti;" << std::endl;
+        std::cout << "10 - Baigti darbą; " << std::endl;
         std::cout << " Pasirinkite ";
         int pasirinkimas;
         try{
@@ -382,22 +382,10 @@ int main(){
             
             case 9:
             {
-                testDefaultConstructor();
-                testCopyConstructor();
-                testCopyAssignment();
-                testMoveConstructor();
-                testMoveAssignment();
-                testDestructor();
-                testInputOutputOperators();
-                //Zmogus z("Vardenis", "Pavardenis");
-                break;
-            }
-            case 10:
-            {
                 spausdinimas(A);
                 break;
             }
-            case 11:
+            case 10:
             {
                 run = false;
                 break;
