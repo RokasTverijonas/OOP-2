@@ -7,23 +7,40 @@
 #include <iostream>
 #include "zmogus.h"
 
+/**
+ * @class Studentas
+ * @brief Studento klasė su įvertinimais
+ * 
+ * Paveldi iš Zmogus klasės vardą ir pavardę. Saugo namų darbų, egzamino įvertinimus
+ * bei skaičiuoja galutinį įvertinimą pagal vidurkį ir medianą
+ */
+
 class Studentas : public Zmogus{
 
 private:
-    std::vector<int> nd_;
-    int egzaminas_;
-    double galutinisVid_;
-    double galutinisMed_;
+    std::vector<int> nd_; ///< Namų darbų pažymių sąrašas
+    int egzaminas_; ///< Egzamino pažymys
+    double galutinisVid_; ///< Galutinis pažymys pagal vidurkį
+    double galutinisMed_; ///< Galutinis pažymys pagal medianą
 
 public:
-    //constructor
+    /**
+     * @brief Default konstruktorius
+     */
     Studentas() 
         : Zmogus(), egzaminas_(0), galutinisVid_(0.0), galutinisMed_(0.0) {}
 
+    /**
+     * @brief Konstruktorius su parametrais
+     * @param v Studento vardas
+     * @param p Studento pavardė
+     */
     Studentas(const std::string& v, const std::string& p)
         : Zmogus(v, p), egzaminas_(0), galutinisVid_(0.0), galutinisMed_(0.0) {}
 
-    //destructor
+    /**
+     * @brief Destruktorius
+     */
     ~Studentas() override
     {
         vardas_.clear();
@@ -35,7 +52,10 @@ public:
     }
 
 
-    //copy constructor
+    /**
+     * @brief Kopijos konstruktorius
+     * @param a Kopijuojamas objektas
+     */
     Studentas(const Studentas &a)
         : Zmogus(a),
           nd_(a.nd_),
@@ -44,7 +64,11 @@ public:
           galutinisMed_(a.galutinisMed_) {}
 
 
-    //copy Assignment operator
+    /**
+     * @brief Kopijos priskyrimo operatorius
+     * @param a Priskiriamas objektas
+     * @return Nuoroda į objektą
+     */
     Studentas& operator=(const Studentas &a)
     {
         if(this != &a)
@@ -59,7 +83,10 @@ public:
 
     }
 
-    //move constructor
+    /**
+     * @brief Perkėlimo konstruktorius
+     * @param a Perkeliamas objektas
+     */
     Studentas(Studentas&& a)
         : Zmogus(std::move(a)),
           nd_(std::move(a.nd_)),
@@ -72,7 +99,11 @@ public:
             a.galutinisMed_ = 0.0;
           }
 
-    //move Assignment operator
+    /**
+     * @brief Perkėlimo priskyrimo operatorius
+     * @param a Perkeliamas objektas
+     * @return Nuoroda į objektą
+     */
     Studentas& operator=(Studentas&& a)
     {
         if(this != &a)
@@ -91,7 +122,13 @@ public:
 
         return *this;
     }
-    //isvedimo operatorius
+
+    /**
+     * @brief Išvesties operatorius
+     * @param out Išvesties srautas
+     * @param a Studentas objektas
+     * @return Išvesties srautas
+     */
     friend std::ostream& operator<<(std::ostream& out, const Studentas& a)
     {
         out << a.vardas_ << " " << a.pavarde_ << " ";
@@ -102,7 +139,13 @@ public:
         out << a.egzaminas_;
         return out;
     }
-    //ivedimo operatorius
+
+    /**
+     * @brief Įvesties operatorius
+     * @param in Įvesties srautas
+     * @param a Studentas objektas
+     * @return Įvesties srautas
+     */
     friend std::istream& operator>>(std::istream& in, Studentas& a)
     {
         std::string eilute;
@@ -123,23 +166,73 @@ public:
 
         return in;
     }
-    //getters
+    
+    /**
+     * @brief Grąžina namų darbų pažymius
+     */
     const std::vector<int>& getNd() const { return nd_; }
+
+    /**
+     * @brief Grąžina egzamino pažymį
+     */
     int getEgzaminas() const { return egzaminas_; }
+
+    /**
+     * @brief Grąžina galutinį pažymį pagal vidurkį
+     */
     double getGalutinisVid() const { return galutinisVid_; }
+
+    /**
+     * @brief Grąžina galutinį pažymį pagal medianą
+     */
     double getGalutinisMed() const { return galutinisMed_; }
 
-    //setters
+    /**
+     * @brief Nustato namų darbų pažymius
+     * @param n Pažymių sąrašas
+     */
     void setNd(const std::vector<int>& n) { nd_ = n; }
+
+    /**
+     * @brief Nustato egzamino pažymį
+     * @param e Egzamino pažymys
+     */
     void setEgzaminas(int e) { egzaminas_ = e; }
+
+    /**
+     * @brief Nustato galutinį pažymį pagal vidurkį
+     * @param galVid galutinis pažymys pagal vidurkį
+     */
     void setGalutinisVid(double galVid) { galutinisVid_ = galVid; }
+
+    /**
+     * @brief Nustato galutinį pažymį pagal medianą
+     * @param galMed galutinis pažymys pagal medianą
+     */
     void setGalutinisMed(double galMed) { galutinisMed_ = galMed; }
 
-    //member functions
+    /**
+     * @brief Apskaičiuoja namų darbų vidurkį
+     * @return Vidurkis kaip double
+     */
     double vidurkis() const override;
 
+    /**
+     * @brief Apskaičiuoja namų darbų medianą
+     * @return Mediana kaip double
+     */
     double mediana() const;
+
+    /**
+     * @brief Apskaičiuoja galutinį pažymį pagal vidurkį
+     * @return Galutinis pažymys kaip double
+     */
     double galutinisVid() const;
+
+    /**
+     * @brief Apskaičiuoja galutinį pažymį pagal medianą
+     * @return Galutinis pažymys kaip double
+     */
     double galutinisMed() const;
 
 

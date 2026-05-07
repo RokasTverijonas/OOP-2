@@ -6,7 +6,6 @@
 #include <deque>
 #include "funkcijos.h"
 #include "studentas.h"
-#include "testai.h"
 #include "zmogus.h"
 
 
@@ -291,22 +290,7 @@ int main(){
                 }
                 else
                 {
-                    int kriterijus;
-                    while(true)
-                    {
-                        std::cout << "Pagal ka rikiuoti? " << std::endl;
-                        std::cout << " 1 - varda " << std::endl;
-                        std::cout << " 2 - pavarde " << std::endl;
-                        std::cout << " 3 - Galutni (vidurkis) " << std::endl;
-                        std::cout << " 4 - Galutini (mediana) " << std:: endl;
-                        std::cin >> kriterijus;
-                        if(kriterijus == 1 || kriterijus == 2 || kriterijus == 3 || kriterijus == 4)
-                        {
-                            break;
-                        }
-                        std::cout << "Ivedete neteisingai, bandykite dar karta! " << std::endl;
-                    }
-                    tyrimasAntras(A, vargsai, kietekai, kriterijus);
+                    tyrimasAntras(A, vargsai, kietekai);
                 }
 
 

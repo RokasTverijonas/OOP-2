@@ -14,13 +14,44 @@
 #include <chrono>
 #include <iomanip>
 
-
+/**
+ * @brief Spausdina studentų sąrašą
+ * @param A Studentų vektorius
+ */
 void spausdinimas(std::vector<Studentas>& A);
-void failoSpausdinimas(std::vector<Studentas>& A);
-void failoGeneravimas(int studKiekis);
-void tyrimasPirmas();
-void tyrimasAntras(std::vector<Studentas>& A, std::vector<Studentas>& vargsai, std::vector<Studentas>& kietekai, int kriterijus);
 
+/**
+ * @brief Spausina studentų sąrašą ekrane arba faile
+ * @param A Studentų vektorius
+ */
+void failoSpausdinimas(std::vector<Studentas>& A);
+
+/**
+ * @brief Generuoja studentų failą
+ * @param studKiekis Studentų kiekis
+ */
+void failoGeneravimas(int studKiekis);
+
+/**
+ * @brief Atlieka tyrimą - matuoja failų generavimo laiką
+ */
+void tyrimasPirmas();
+
+/**
+ * @brief Atlieka tyrimą - matuoja nuskaitymo ir padalinimo laiką
+ * @param A Studentų vektorius
+ * @param vargsai Prastai besimokančių studentų vektorius
+ * @param kietekai Gerai besimokančių studentų vektorius
+ */
+void tyrimasAntras(std::vector<Studentas>& A, std::vector<Studentas>& vargsai, std::vector<Studentas>& kietekai);
+
+
+/**
+ * @brief Nuskaito duomenis iš failo
+ * @tparam konteineris Konteineris (vector, list, deque)
+ * @param A Studentų konteineris
+ * @param failas Failo pavadinimas
+ */
 template<typename konteineris> 
 void skaitymas(konteineris& A, std::string failas)
 {
@@ -62,6 +93,14 @@ void skaitymas(konteineris& A, std::string failas)
     }
     input.close();
 }
+
+/**
+ * @brief Surašo vargšus ir kietekus į atskirus failus
+ * @tparam konteineris Konteineris (vector, list, deque)
+ * @param failas Orginalaus failo pavadinimas
+ * @param vargsai Vargšų studentų konteineris
+ * @param kietekai Kietekų studentų konteineris
+ */
 template<typename konteineris>
 void atskiriFailai(std::string failas, konteineris& vargsai, konteineris& kietekai)
 {
@@ -94,6 +133,12 @@ void atskiriFailai(std::string failas, konteineris& vargsai, konteineris& kietek
     }
 }
 
+/**
+ * @brief Rikiuoja studentus pagal pasirinktą kriterijų
+ * @tparam konteineris Konteineris (vector, list, deque)
+ * @param A Studentų konteineris
+ * @param kriterijus Rikiavimo kriterijus (1 - vardas; 2 - pavardė; 3 - galutinis pagal vidurkį; 4 - galutinis pagal medianą)
+ */
 template<typename konteineris>
 void rikiavimas(konteineris& A, int kriterijus)
 {
@@ -141,7 +186,13 @@ void rikiavimas(konteineris& A, int kriterijus)
 
 }
 
-//1 strategija
+/**
+ * @brief 1 strategija - dalina studentus į du atskirus konteinerius
+ * @tparam konteineris Konteineris (vector, list, deque)
+ * @param A Studentų konteineris
+ * @param vargsai Prastai besimokančių studentų konteineris
+ * @param kietekai Gerai besimokančių studentų konteineris
+ */
 template<typename konteineris>
 void StudentuPadalinimas( konteineris& A, konteineris& vargsai, konteineris& kietekai)
 {
@@ -159,7 +210,12 @@ void StudentuPadalinimas( konteineris& A, konteineris& vargsai, konteineris& kie
     A.clear();
 
 }
-//2 strategija
+/**
+ * @brief 2 strategija - rikiuoja ir išima vargšus iš galo
+ * @tparam konteineris Konteineris (vector, list, deque)
+ * @param A Studentų konteineris
+ * @param vargsai Prastai besimokančių studentų konteineris
+ */
 template<typename konteineris>
 void StudentuPadalinimas2(konteineris& A, konteineris& vargsai)
 {
@@ -216,7 +272,12 @@ void StudentuPadalinimas2(konteineris& A, konteineris& vargsai)
 
 }
 
-//3 strategija
+/**
+ * @brief 3 strategija - naudoja partition padalinimui
+ * @tparam konteineris Konteineris (vector, list, deque)
+ * @param A Studentų konteineris
+ * @param vargsai Prastai besimokančių studentų konteineris
+ */
 template<typename konteineris>
 void StudentuPadalinimas3(konteineris& A, konteineris& vargsai)
 {
@@ -231,7 +292,15 @@ void StudentuPadalinimas3(konteineris& A, konteineris& vargsai)
 
 }
 
-
+/**
+ * @brief Atlieka skirtingų konteinerių greičio tyrimą su skirtingomis strategijomis
+ * @tparam konteineris Konteineris (vector, list, deque)
+ * @param A Studentų konteineris
+ * @param vargsai Prastai besimokančių studentų konteineris
+ * @param kietekai Gerai besimokančių studentų konteineris
+ * @param kriterijus Rikiavimo kriterijus (1 - vardas; 2 - pavardė; 3 - galutinis pagal vidurkį; 4 - galutinis pagal medianą)
+ * @param strategija Padalinimo strategija (1, 2 arba 3)
+ */
 template<typename konteineris>
 void KonteineriuTyrimas(konteineris& A, konteineris& vargsai, konteineris& kietekai, int kriterijus, int strategija)
 {

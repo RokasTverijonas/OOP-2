@@ -82,7 +82,7 @@ double Studentas::mediana() const
 
 double Studentas::galutinisVid() const
 {
-    return 0.4 * vidurkis() + 0.6 * egzaminas_;
+    return 0.4 * vidurkis() + 0.6 * egzaminas_;//2.4 + 3.6
 }
 double Studentas::galutinisMed() const
 {
@@ -233,7 +233,7 @@ void tyrimasPirmas()
     }
 }
 
-void tyrimasAntras(std::vector<Studentas>& A, std::vector<Studentas>& vargsai, std::vector<Studentas>& kietekai, int kriterijus)
+void tyrimasAntras(std::vector<Studentas>& A, std::vector<Studentas>& vargsai, std::vector<Studentas>& kietekai)
 {
     std::vector<int> studKiekis = {1000, 10000, 100000, 1000000, 10000000};
 
