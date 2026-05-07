@@ -130,3 +130,23 @@ TEST(StudentasClassTest, InputOutputOperators)
 
     EXPECT_EQ(isvestis.str(), "Vardas Pavarde 1 8 9 10");
 }
+
+TEST(StudentasClassTest, GalutinioBaloSkaiciavimasVid)
+{
+    std::vector<int> nd = {5,6,7};
+    Studentas s("Vardenis", "Pavardenis");
+    s.setNd(nd);
+    s.setEgzaminas(6);
+
+    EXPECT_EQ(s.galutinisVid(), 6.0);
+}
+
+TEST(StudentasClassTest, GalutinioBaloSkaiciavimasMed)
+{
+    std::vector<int> nd = {5,6,7};
+    Studentas s("Vardenis", "Pavardenis");
+    s.setNd(nd);
+    s.setEgzaminas(6);
+
+    EXPECT_EQ(s.galutinisMed(), 6.0);
+}
