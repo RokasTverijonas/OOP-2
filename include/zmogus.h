@@ -6,7 +6,7 @@
 
 /**
  * @class Zmogus
- * @brief Abstrakti klasė turit, sauganti vardą ir pavardę
+ * @brief Abstrakti klasė sauganti vardą ir pavardę
  */
 
 class Zmogus {
