@@ -1,4 +1,4 @@
-digraph "Graphical Class Hierarchy"
+digraph "Grafinė Klasės Hierarchija"
 {
  // LATEX_PDF_SIZE
   bgcolor="transparent";

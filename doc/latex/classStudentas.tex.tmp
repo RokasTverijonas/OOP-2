@@ -1,4 +1,4 @@
-\doxysection{Studentas Class Reference}
+\doxysection{Studentas Klasė}
 \hypertarget{classStudentas}{}\label{classStudentas}\index{Studentas@{Studentas}}
 
 
@@ -11,13 +11,13 @@ Studento klasė su įvertinimais.
 
 
 
-Inheritance diagram for Studentas\+:
+Paveldimumo diagrama Studentas\+:
 % FIG 0
 
 
-Collaboration diagram for Studentas\+:
+Bendradarbiavimo diagrama Studentas\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Vieši Metodai}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classStudentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}} ()
@@ -58,7 +58,7 @@ double \mbox{\hyperlink{classStudentas_a49a2519eb2a57b8c0b572cf414ccc3fc}{galuti
 \begin{DoxyCompactList}\small\item\em Apskaičiuoja galutinį pažymį pagal vidurkį \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classStudentas_ab9dcc63a1ad95f1f34db3e5a96449720}{galutinis\+Med}} () const
 \begin{DoxyCompactList}\small\item\em Apskaičiuoja galutinį pažymį pagal medianą \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classZmogus}{Zmogus}}}
+\doxysubsection*{Vieši Metodai inherited from \mbox{\hyperlink{classZmogus}{Zmogus}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classZmogus_a905fef3b8ad421a6d023c7ebc295f48e}{Zmogus}} ()=default
@@ -83,7 +83,7 @@ void \mbox{\hyperlink{classZmogus_a1cfb82338adcdbeecccebb8c77b4aaf4}{set\+Vardas
 \begin{DoxyCompactList}\small\item\em Nustato vardą \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classZmogus_a604c508fa587671a7d1df8f0522c63e9}{set\+Pavarde}} (const std\+::string \&p)
 \begin{DoxyCompactList}\small\item\em Nustato pavardę \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Friends}
+\doxysubsubsection*{Draugai}
 \begin{DoxyCompactItemize}
 \item 
 std\+::ostream \& \mbox{\hyperlink{classStudentas_a26ac513d532bcd006bc6e2f40d44fc61}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classStudentas}{Studentas}} \&a)
@@ -91,7 +91,7 @@ std\+::ostream \& \mbox{\hyperlink{classStudentas_a26ac513d532bcd006bc6e2f40d44f
 std\+::istream \& \mbox{\hyperlink{classStudentas_a8eab0602793087daabe2d635736ad903}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classStudentas}{Studentas}} \&a)
 \begin{DoxyCompactList}\small\item\em Įvesties operatorius. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classZmogus}{Zmogus}}}
+\doxysubsection*{Apsaugoti Atributai inherited from \mbox{\hyperlink{classZmogus}{Zmogus}}}
 \begin{DoxyCompactItemize}
 \item 
 std\+::string \mbox{\hyperlink{classZmogus_a80e72cd553492344884a264a72ce33d2}{vardas\+\_\+}}
@@ -100,12 +100,12 @@ std\+::string \mbox{\hyperlink{classZmogus_a85cd6103a5f887059263d15413a3f081}{pa
 \begin{DoxyCompactList}\small\item\em Žmogaus pavardė \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Smulkus aprašymas}
 Studento klasė su įvertinimais. 
 
 Paveldi iš \doxylink{classZmogus}{Zmogus} klasės vardą ir pavardę. Saugo namų darbų, egzamino įvertinimus bei skaičiuoja galutinį įvertinimą pagal vidurkį ir medianą 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Konstruktoriaus ir Destruktoriaus Dokumentacija}
 \Hypertarget{classStudentas_ab459e995e8c9b24cdc9aec5b09a66539}\label{classStudentas_ab459e995e8c9b24cdc9aec5b09a66539} 
 \index{Studentas@{Studentas}!Studentas@{Studentas}}
 \index{Studentas@{Studentas}!Studentas@{Studentas}}
@@ -127,7 +127,7 @@ Default konstruktorius.
 Konstruktorius su parametrais. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parametrai}
 {\em v} & Studento vardas \\
 \hline
 {\em p} & Studento pavardė \\
@@ -154,7 +154,7 @@ Destruktorius.
 Kopijos konstruktorius. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parametrai}
 {\em a} & Kopijuojamas objektas \\
 \hline
 \end{DoxyParams}
@@ -169,13 +169,13 @@ Kopijos konstruktorius.
 Perkėlimo konstruktorius. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parametrai}
 {\em a} & Perkeliamas objektas \\
 \hline
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Metodų Dokumentacija}
 \Hypertarget{classStudentas_ab9dcc63a1ad95f1f34db3e5a96449720}\label{classStudentas_ab9dcc63a1ad95f1f34db3e5a96449720} 
 \index{Studentas@{Studentas}!galutinisMed@{galutinisMed}}
 \index{galutinisMed@{galutinisMed}!Studentas@{Studentas}}
@@ -186,7 +186,7 @@ Perkėlimo konstruktorius.
 
 Apskaičiuoja galutinį pažymį pagal medianą 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Gražina}
 Galutinis pažymys kaip double 
 \end{DoxyReturn}
 \Hypertarget{classStudentas_a49a2519eb2a57b8c0b572cf414ccc3fc}\label{classStudentas_a49a2519eb2a57b8c0b572cf414ccc3fc} 
@@ -199,7 +199,7 @@ Galutinis pažymys kaip double
 
 Apskaičiuoja galutinį pažymį pagal vidurkį 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Gražina}
 Galutinis pažymys kaip double 
 \end{DoxyReturn}
 \Hypertarget{classStudentas_abe38c118e8e899b4de681f1d12adceab}\label{classStudentas_abe38c118e8e899b4de681f1d12adceab} 
@@ -252,7 +252,7 @@ Grąžina namų darbų pažymius.
 
 Apskaičiuoja namų darbų medianą 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Gražina}
 Mediana kaip double 
 \end{DoxyReturn}
 \Hypertarget{classStudentas_a5061f9f87bd269e505d2948c8c0b157a}\label{classStudentas_a5061f9f87bd269e505d2948c8c0b157a} 
@@ -266,11 +266,11 @@ Mediana kaip double
 Kopijos priskyrimo operatorius. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parametrai}
 {\em a} & Priskiriamas objektas \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Gražina}
 Nuoroda į objektą 
 \end{DoxyReturn}
 \Hypertarget{classStudentas_a9669872af622e52511ca103652c5e6f6}\label{classStudentas_a9669872af622e52511ca103652c5e6f6} 
@@ -284,11 +284,11 @@ Nuoroda į objektą
 Perkėlimo priskyrimo operatorius. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parametrai}
 {\em a} & Perkeliamas objektas \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Gražina}
 Nuoroda į objektą 
 \end{DoxyReturn}
 \Hypertarget{classStudentas_a659d6bb3cfd109fe095a9a03eaea2667}\label{classStudentas_a659d6bb3cfd109fe095a9a03eaea2667} 
@@ -302,7 +302,7 @@ Nuoroda į objektą
 Nustato egzamino pažymį 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parametrai}
 {\em e} & Egzamino pažymys \\
 \hline
 \end{DoxyParams}
@@ -317,7 +317,7 @@ Nustato egzamino pažymį
 Nustato galutinį pažymį pagal medianą 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parametrai}
 {\em gal\+Med} & galutinis pažymys pagal medianą \\
 \hline
 \end{DoxyParams}
@@ -332,7 +332,7 @@ Nustato galutinį pažymį pagal medianą
 Nustato galutinį pažymį pagal vidurkį 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parametrai}
 {\em gal\+Vid} & galutinis pažymys pagal vidurkį \\
 \hline
 \end{DoxyParams}
@@ -347,7 +347,7 @@ Nustato galutinį pažymį pagal vidurkį
 Nustato namų darbų pažymius. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parametrai}
 {\em n} & Pažymių sąrašas \\
 \hline
 \end{DoxyParams}
@@ -361,16 +361,16 @@ Nustato namų darbų pažymius.
 
 Apskaičiuoja namų darbų vidurkį 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Gražina}
 Vidurkis kaip double 
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classZmogus_ac77739c026ffd22942cfe4c72186872e}{Zmogus}}.
+Realizuoja \mbox{\hyperlink{classZmogus_ac77739c026ffd22942cfe4c72186872e}{Zmogus}}.
 
 
 
-\doxysubsection{Friends And Related Symbol Documentation}
+\doxysubsection{Draugiškų Ir Susijusių Funkcijų Dokumentacija}
 \Hypertarget{classStudentas_a26ac513d532bcd006bc6e2f40d44fc61}\label{classStudentas_a26ac513d532bcd006bc6e2f40d44fc61} 
 \index{Studentas@{Studentas}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Studentas@{Studentas}}
@@ -382,13 +382,13 @@ Implements \mbox{\hyperlink{classZmogus_ac77739c026ffd22942cfe4c72186872e}{Zmogu
 Išvesties operatorius. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parametrai}
 {\em out} & Išvesties srautas \\
 \hline
 {\em a} & \doxylink{classStudentas}{Studentas} objektas \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Gražina}
 Išvesties srautas 
 \end{DoxyReturn}
 \Hypertarget{classStudentas_a8eab0602793087daabe2d635736ad903}\label{classStudentas_a8eab0602793087daabe2d635736ad903} 
@@ -402,18 +402,18 @@ Išvesties srautas
 Įvesties operatorius. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parametrai}
 {\em in} & Įvesties srautas \\
 \hline
 {\em a} & \doxylink{classStudentas}{Studentas} objektas \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Gražina}
 Įvesties srautas 
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+Dokumentacija šiai klasei sugeneruota iš šių failų\+:\begin{DoxyCompactItemize}
 \item 
 include/\mbox{\hyperlink{studentas_8h}{studentas.\+h}}\item 
 src/\mbox{\hyperlink{funkcijos_8cpp}{funkcijos.\+cpp}}\end{DoxyCompactItemize}
