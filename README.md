@@ -63,7 +63,8 @@ Testams naudojamas **Google Test** framework'as.
 ----------------------------------------------
 
 ## Nuotrauka
-![alt text](image-1.png)
+<img width="860" height="534" alt="image" src="https://github.com/user-attachments/assets/f66aa0b3-1810-41ff-9483-397d7fd6a327" />
+
 
 # v1.5 rezultatai
 
