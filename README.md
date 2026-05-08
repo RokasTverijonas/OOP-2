@@ -29,6 +29,11 @@ Programa skirta studentų akademinių pasiekimų informacijos apdorojimui. Varto
    ```
    ./programa1
    ```
+5. Paleiskite testus
+
+   ```
+   ./gtestai
+   ```
 
 # Kompiuterio specifikacijos:
 
@@ -36,6 +41,29 @@ Programa skirta studentų akademinių pasiekimų informacijos apdorojimui. Varto
 |----------------|------|------------| 
 | Intel i5-8265U | 16GB | NVMe 256GB |      
 --------------------------------------
+# v2.0 rezultatai
+
+Šioje versijoje atliekami testai naudojant **Google Test** framework'ą. Pridėta **Doxygen** dokumentacija. 
+
+## Unit testai
+
+Testams naudojamas **Google Test** framework'as.
+
+|     Testas                     | Rezultatas|
+|--------------------------------|-----------| 
+|  `DefaultKonstruktorius`       |     ✅    |    
+|  `CopyKonstruktorius `         |     ✅    |
+|  `CopyAssignmentOperatorius`   |     ✅    |  
+|  `MoveKonstruktorius`          |     ✅    |  
+|  `MoveAssignmentOperatorius`   |     ✅    |  
+|  `Destruktorius`               |     ✅    |  
+|  `ĮvestiesIšvestiesOperatoriai`|     ✅    |  
+|  `GalutinioBaloSkaičiavimasVid`|     ✅    |   
+|  `GalutinioBaloSkaičiavimasMed`|     ✅    |
+----------------------------------------------
+
+## Nuotrauka
+![alt text](image-1.png)
 
 # v1.5 rezultatai
 
@@ -75,3 +103,51 @@ I/O operatoriai
 Rezultatų nuotrauka
 
 <img width="387" height="126" alt="image" src="https://github.com/user-attachments/assets/8cf09e6b-64d9-49ae-a405-f6eaa1b4422f" />
+
+# v1.2 rezultatai
+
+|   Metodas                | Sintaksė                                  |Paskirtis                                     | 
+| -------------------------|-------------------------------------------|----------------------------------------------| 
+|Copy konstruktorius       |`studentas(const studentas& a)`            |Kuriama objekto kopija                        |
+|Copy priskyrimo operatorius|`studentas& operator=(const studentas &a)`|objekto kopijos priskyrimas - b = a           |
+|Move konstruktorius       |`studentas(studentas&& a)`                 |Objekto perėmimas - studentas b = std::move(a)|                                          |
+|Move priskyrimo operatorius|`studentas& operator=(studentas&& a)`     |Objekto perėmimas - b = std::move(a)          |
+|Destruktorius             |`~studentas()`                             |Objekto sunaikinimas (veikia automtiskai)     |
+-----------------------------------------------------------------------------------------------------------------------
+
+I/O operatoriai
+
+|  Operatorius   |  Paskirtis                           | 
+|----------------|--------------------------------------|
+| `operator>>`     | nuskaito duomenis iš srauto į objektą|    
+| `operator<<`    | Išveda objekto duomenis į srautą     |  
+----------------------------------------------------------
+
+Nuotrauka
+
+<img width="387" height="126" alt="image" src="https://github.com/user-attachments/assets/8cf09e6b-64d9-49ae-a405-f6eaa1b4422f" />
+
+# v1.1 rezultatai:
+
+- Tyrimas atliekamas su vector konteineriu, pannaudojant 3-ją strategiją, kuri buvo sukurta v1.0 versijoje.
+- Tyrimo tkslas palyginti struct ir class efektyvumą, saugant studentų duomenis.
+
+
+100000 studentų failas
+
+|   Veikimo laikas (class) |  Veikimo laikas (struct)  | Vėliava | Vykdomojo failo dydis (class) | Vykdomojo failo dydis (struct)   |
+| -------------------------|---------------------------| --------| ------------------------------| ---------------------------------| 
+|     0.277439 s           |          0.241432 s       | -01     |             206.5 KB          |               210.1 KB           | 
+|     0.305582 s           |          0.251457 s       | -O2     |             189.6 KB          |               183.8 KB           |
+|     0.28994 s            |          0.239646 s       | -O3     |             191.2 KB          |               190.2 KB           |
+-------------------------------------------------------------------------------------------------------------------------------------
+
+1000000 studentų failas
+
+|   Veikimo laikas (class) |  Veikimo laikas (struct)  | Vėliava | Vykdomojo failo dydis (class) | Vykdomojo failo dydis (struct)   |
+| -------------------------|---------------------------| --------| ------------------------------| ---------------------------------| 
+|     2.64364 s            |          2.25808 s        | -01     |             206.5 KB          |               210.1 KB           | 
+|     2.75745 s            |          2.28378 s        | -O2     |             189.6 KB          |               183.8 KB           |
+|     2.66723 s            |          2.14807 s        | -O3     |             191.2 KB          |               190.2 KB           |
+-------------------------------------------------------------------------------------------------------------------------------------
+
