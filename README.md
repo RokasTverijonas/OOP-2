@@ -63,7 +63,8 @@ Testams naudojamas **Google Test** framework'as.
 ----------------------------------------------
 
 ## Nuotrauka
-![alt text](image-1.png)
+<img width="850" height="526" alt="image" src="https://github.com/user-attachments/assets/3f3a1f89-4dd2-457d-a514-8045ff4b12a0" />
+
 
 # v1.5 rezultatai
 
@@ -79,7 +80,8 @@ Bandymas sukurti abstrakčios "Zmogus" klasės objektą
 
 `Zmogus z("Vardenis", "Pavardenis")`
 
-![alt text](image.png)
+<img width="832" height="267" alt="image" src="https://github.com/user-attachments/assets/6988761e-0bf1-4622-9e02-1073c169de39" />
+
 
 # "Rule of five"
 
